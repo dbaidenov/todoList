@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.App {
+  max-height: 600px;
+  overflow-y: hidden;
+  overflow-y: scroll;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
+}
+
+.App::-webkit-scrollbar {
+  display: none;
+}
+
+/* navbar */
+
+.iconTodo {
+  width: 4rem;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.navbar-nav .nav-link {
+  margin-left: 2rem;
+}
+
+.navbar-collapse {
+  font-size: 1.5rem;
+  flex-grow: 0;
+}
+
+.navbar-link--active {
+  -webkit-box-shadow: -1px 0px 20px 6px rgba(80, 79, 34, 0.2);
+  -moz-box-shadow: -1px 0px 20px 6px rgba(80, 79, 34, 0.2);
+  box-shadow: -1px 0px 20px 6px rgba(80, 79, 34, 0.2);
+}
+
+/* todoInput */
+
+.todoInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  height: 50px;
+  margin-top: 2rem;
+}
+
+.todoInput input {
+  font-size: 1.5rem;
+  padding-inline: 1rem;
+  color: white;
+  border-radius: 0.8rem;
+  width: 90%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.todoInput button {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: antiquewhite;
+  padding: 0.5rem;
+}
+
+/* todoList */
+
+.todoList {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 50px;
+}
+
+input:disabled {
+  background-color: transparent;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+.useTodo {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.useTodo button {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.5rem;
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: azure;
+  padding: 0.2rem;
+}
+
+.form-check-input {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+.todo-description--done {
+  text-decoration: line-through;
+}
+
+.todo-description {
+  outline: none;
+  width: 100%;
+  border: none;
+}
+
+/* details */
+.details {
+  margin-top: 1.5rem;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  border: 1px solid yellowgreen;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+span {
+  font-weight: bold;
+}
+
+/* Confirm button */
+.button-confirm {
+  display: none !important;
+}
+
+/* Footer */
+.remove-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: azure;
+  padding: 0.3rem;
+}
+
+@media screen and (max-width: 330px) {
+  .iconTodo {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .navbar-nav .nav-link {
+    margin: 0;
+  }
+
+  .navbar-nav {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .useTodo button {
+    padding-inline: 0.6rem;
+  }
+}
+
+@media screen and(max-width:740px) {
+  .todoList {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .todoList {
+    flex-direction: column;
+    margin-block: 1rem;
+    width: 100%;
+  }
+
+  .todoList:first-child {
+    margin-top: 0;
+  }
+
+  .form-check {
+    margin-block: 1rem;
+    width: 100%;
+  }
+
+  .form-check .form-check-input {
+    margin-left: -2rem;
+  }
+
+  .useTodo {
+    width: 100%;
+  }
+
+  .todoInput {
+    width: 100%;
+  }
+
+  .todoInput button {
+    width: 15%;
+    margin-left: 0.5rem;
+  }
+
+  .remove-button {
+    margin-top: 3rem;
+  }
+}
